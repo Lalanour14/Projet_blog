@@ -1,28 +1,27 @@
 <?php
 use App\Entity\Articles;
-use App\Repository\ArticlesRepository;
+use App\Entity\Category;
+use App\Entity\Commentaire;
+use App\Repository\CategoryRepository;
 
 require '../vendor/autoload.php';
 
-$repository = new ArticlesRepository();
+$repository = new CategoryRepository();
 
-// $Articles = $repository->findAll();
+$Category = $repository->findAll();
+//var_dump($Category);
 
+//$Category = $repository->findById(3);
+//var_dump($repository->findById(3));
+$tocategory = new Category('les Animaux ');
 
-$Articles = $repository->findById(3);
+$repository->persist($tocategory);
 
-//$toarticle = new Articles('un soir en australie', 'le kangourus me frolait la jambe ,me coeur battait la chamade.', 1);
+//var_dump($tocategory);
 
-//$repository->persist($toarticle);
+$repository->delete(3);
 
-//var_dump($toarticle);
-
-//$repository->delete(1);
-
-var_dump($Articles);
-
-$Articles->setTitle('la vie');
-
-$repository->update($Articles);
-
-var_dump($Articles);
+$Category = $repository->findById(3);
+//$Category->setLabel("les oiseaux ");
+//$repository->update($commentaire);
+var_dump($repository->findById(3));
