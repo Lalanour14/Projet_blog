@@ -1,0 +1,21 @@
+{
+    "name": "bouzi/projet_blog",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "scripts": {
+        "start": "php -S localhost:8000 -t public"
+    },
+"require": {},
+    "config": {
+      "process-timeout":0
+    }
+}
+
+
+
+
+
+
